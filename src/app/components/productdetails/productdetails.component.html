@@ -1,0 +1,25 @@
+<div *ngIf="productdetails.length==0">
+    <i>No Records found</i>
+</div>
+<table>
+<thead>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>price</th>
+        <th>warranty</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let item of productdetails;i:index">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.cost}}</td>
+        <td [ngSwitch]="item.warranty">
+            <span *ngSwitchCase="'y'">claimmable</span>
+            <span *ngSwitchCase="'n'"> Non claimmable</span>
+            <span *ngSwitchDefault>NA</span>
+        </td>
+    </tr>
+</tbody>
+</table>

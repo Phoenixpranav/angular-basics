@@ -1,0 +1,37 @@
+<form>
+    <label for="id">id:</label>
+    <input type="number" id="id" name="id" [(ngModel)]="id"><br>
+    <label for="Name">Product name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="name"><br>
+    <label for="cost">Cost:</label>
+    <input type="number" id="cost"  name="cost" [(ngModel)]="cost"><br>
+    <label for="warranty">Warranty(y/n):</label>
+    <input type="type" name="warranty" id="warranty" [(ngModel)]="warranty"><br>
+    <button type="submit" (click)="handlesubmit()">submit</button>
+  </form>
+
+  <div *ngIf="productdetails.length==0">
+    <i>No Records found</i>
+</div>
+<table>
+<thead>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>price</th>
+        <th>warranty</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let item of productdetails;i:index">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.cost}}</td>
+        <td [ngSwitch]="item.warranty">
+            <span *ngSwitchCase="'y'">claimmable</span>
+            <span *ngSwitchCase="'n'"> Non claimmable</span>
+            <span *ngSwitchDefault>NA</span>
+        </td>
+    </tr>
+</tbody>
+</table>

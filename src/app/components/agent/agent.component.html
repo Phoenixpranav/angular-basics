@@ -1,0 +1,6 @@
+<form>
+    <input type="text" name="data" id="data" [(ngModel)]="agentName">
+    <input type="number " name="cont" id="cont" [(ngModel)]="agentContact">
+    <button type="submit" (click)="handlesubmit()">submit</button>
+</form>
+<app-admin [agent] ="agentDetails" (sendindex)="getindex($event)"></app-admin>

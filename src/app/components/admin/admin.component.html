@@ -1,0 +1,26 @@
+<h1>{{title}}</h1>
+<table>
+    <thead>
+        <tr>
+            <th>agentName</th>
+            <th>agentContact</th>
+            <th>    </th>
+            
+        </tr>
+    </thead>
+    <tbody >
+        <div *ngFor="let item of agent;i:index">
+            <tr>
+                <td>{{item.name}}</td>
+                <td>{{item.contact}}</td>
+                <td><button (click)="handledelete(item)">delete</button></td>
+            </tr>
+        </div>
+       
+    </tbody>
+    </table>
+
+
+   
+
+   

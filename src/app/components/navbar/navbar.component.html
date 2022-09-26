@@ -1,0 +1,9 @@
+<nav>
+    <!-- <button class="button" *ngFor="let item of sidebar">
+        <a [routerLink]="item.path">{{item.page}}</a>
+    </button> -->
+
+    <button class="button" *ngFor="let item of sidebar" (click)="handleNavigate(item)">
+     {{item.page}}
+    </button>
+</nav>
