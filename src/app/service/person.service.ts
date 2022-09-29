@@ -23,7 +23,7 @@ savePerson(data:any){
 }
 
 
-getByIdPerson(id:number){
+getByIdPerson(id?:any){
   return this.httpClient.get(this.baseURL+this.endPointURL+"/"+id);
 }
 

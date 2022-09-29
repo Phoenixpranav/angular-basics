@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges }  from '@angular/core';
+import { Router } from '@angular/router';
 import { Person } from 'src/app/model/Person';
 import { PersonService } from 'src/app/service/person.service';
 
@@ -12,7 +13,7 @@ export class PersontableComponent implements OnInit {
 
   personDetails:Person[]=[];
 
-  constructor(private personService:PersonService) { }
+  constructor(private personService:PersonService,private router:Router) { }
 
   ngOnInit(): void {
     this.getDetails();
@@ -28,6 +29,12 @@ export class PersontableComponent implements OnInit {
 
   handleEdit(id?:number){
 
+    sessionStorage.setItem('id',JSON.stringify(id))
+    this.router.navigate(['/reactive-form'],{
+     state:{
+      id:id
+     }
+    })
   }
 
 

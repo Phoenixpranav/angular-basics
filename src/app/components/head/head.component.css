@@ -21,10 +21,3 @@ p{
     width: min-content;
     background-color: aqua;
 }
-footer{
-    position: fixed;
-    bottom: 0;
-    background-color: aquamarine;
-    width: 100%;
-    text-align: center;
-}
